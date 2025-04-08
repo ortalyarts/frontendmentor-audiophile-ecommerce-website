@@ -11,6 +11,7 @@ import AnimatedDivExpandInView from "@/components/animatedDivExpandInView.jsx";
 
 
 export default function Home() {
+  console.log('v.1')
   return (
     <>
     <HeaderHome />
