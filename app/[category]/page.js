@@ -10,6 +10,11 @@ import ProductListItem from "@/components/productListItem";
 
 const VALID_CATEGORIES = ['headphones', 'speakers', 'earphones'];
 
+export async function generateStaticParams() {
+  return VALID_CATEGORIES.map(category => ({ category }));
+}
+export const dynamicParams = false;
+
 export default async function Category(props) {
   const products = getProducts();
   const params = await props.params;
