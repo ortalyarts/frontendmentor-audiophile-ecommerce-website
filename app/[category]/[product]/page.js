@@ -100,7 +100,7 @@ export default async function ProductDetails(props) {
                 </ul>
             </div> */}
             </Suspense>
-            <ThumbProductCategories />
+            {/* <ThumbProductCategories /> */}
             {/* <Article /> */}
         </div>
     );
