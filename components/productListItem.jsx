@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import AnimatedDivSlideInView from "./AnimatedDivSlideInView.jsx";
+import ImageOnClient from "./imageOnClient.jsx";
 
 export default function ProductListItem ({item}){
 
@@ -15,11 +16,12 @@ export default function ProductListItem ({item}){
     return(
     <article>
         <AnimatedDivSlideInView className="product-list-item">
-        <picture>
+            <ImageOnClient srcDesktop={item.desktop} srcTablet={item.tablet} srcMobile={item.mobile} alt={item.name}/>
+        {/* <picture>
             <source srcSet={item.desktop.replace('./', '/').replace('image-product', 'image-category-page-preview')} media="(min-width: 768px)" width="540" height="560" />
             <source srcSet={item.tablet.replace('./', '/').replace('image-product', 'image-category-page-preview')} media="(min-width: 376px)" width="689" height="352" />
             <img srcSet={item.mobile.replace('./', '/').replace('image-product', 'image-category-page-preview')} alt={item.name} width="327" height="352" />
-        </picture>
+        </picture> */}
         <div className="article-summary">
             <h2 className="title-2">{item.name}</h2>
             <p>

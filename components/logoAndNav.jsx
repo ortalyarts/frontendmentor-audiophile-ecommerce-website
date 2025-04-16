@@ -9,7 +9,7 @@ import { useState, useEffect } from 'react';
 // import closeMenu from '../assets/shared/mobile/icon-close.svg';
 
 export default function LogoAndNav (){
-  console.log('v 1')
+  console.log('v 2')
   const [isOpen, setIsOpen] = useState(false)
 
   function toggleMenu () {

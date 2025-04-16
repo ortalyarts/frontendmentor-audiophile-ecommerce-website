@@ -30,7 +30,7 @@ export default async function Category(props) {
       <h1 className='title-3'>{selectedCategory}</h1>
     </div>
     <div className="content-holder">
-    {/* <Suspense fallback={<p>Loading products...</p>}>
+    <Suspense fallback={<p>Loading products...</p>}>
       <div className="list-of-products">
         {productsOfCategory.map((item) => {
           const itemImages = productsOfCategory.filter(set => set.product_id === item.id);
@@ -41,7 +41,7 @@ export default async function Category(props) {
     </Suspense>
 
     <ThumbProductCategories />
-    <Article /> */}
+    <Article /> 
   </div>
   </>
   );
