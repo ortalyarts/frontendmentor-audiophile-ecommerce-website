@@ -22,7 +22,7 @@ export default async function ProductDetails(props) {
         getGallery(selectedProduct.id),
         getOthers(selectedProduct.id)
     ]);
-
+    console.log('v 6')
     return (
         <div className="content-holder product-details-page">
             <GoBackButton />
@@ -60,7 +60,7 @@ export default async function ProductDetails(props) {
                     </ul>
                 </div>
             </article>
-            <div className='gallery'>
+            {/* <div className='gallery'>
                 <div className='gallery-left'>
                     <ImageProductDetails srcDesktop={productGallery[0].desktop} srcTablet={productGallery[0].tablet} srcMobile={productGallery[0].mobile} alt={selectedProduct.name}
                         desktopWidth={445} desktopHeight={280}
@@ -78,7 +78,7 @@ export default async function ProductDetails(props) {
                     tabletWidth={395} tabletHeight={368}
                     mobileWidth={327} mobileHeight={327}
                 />
-            </div>
+            </div> */}
             <div className='related-products'>
                 <h2 className='title-3'>You may also like</h2>
                 <ul>
