@@ -22,12 +22,12 @@ export default async function ProductDetails(props) {
         getGallery(selectedProduct.id),
         getOthers(selectedProduct.id)
     ]);
-    console.log('v 6')
+
     return (
         <div className="content-holder product-details-page">
             <GoBackButton />
             <Suspense fallback={<p>Loading products...</p>}>
-            <article className='product-details-top'>
+            {/* <article className='product-details-top'>
                 <div className='image-holder rounded-corners'>
                     <ImageProductDetails srcDesktop={selectedProduct.desktop} srcTablet={selectedProduct.tablet} srcMobile={selectedProduct.mobile} alt={selectedProduct.name}
                         desktopWidth={540} desktopHeight={560}
@@ -42,7 +42,7 @@ export default async function ProductDetails(props) {
                     <p className='price title-6'>$ {selectedProduct.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</p>
                     <QuantityAddToCart slug={selectedProduct.slug} price={selectedProduct.price} name={selectedProduct.name}/>                
                 </div>
-            </article>
+            </article> */}
             <article className='features-and-contains'>
                 <div>
                     <h3 className='title-3'>Features</h3>
