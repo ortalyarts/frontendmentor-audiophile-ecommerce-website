@@ -308,7 +308,8 @@ nav.main-navigation{
   background-image: url(/assets/home/mobile/image-header.jpg);
   background-repeat:  no-repeat;
   background-position:  center top -5rem;
-  background-size: 70%;
+  background-size: 100%;
+  /* background-size: 70%; */
   display:grid;
   align-items: start;
 }
