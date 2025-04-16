@@ -1,10 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 
-// import imgThumbHeadphonesDesktop from '/assets/shared/desktop/image-category-thumbnail-headphones.png';
-// import imgThumbSpeakers from '/assets/shared/desktop/image-category-thumbnail-speakers.png';
-// import imgThumbEarphines from '/assets/shared/desktop/image-category-thumbnail-earphones.png'
-
 export default function ThumbProductCategories(){
     return(
     <ul className="categories-links">

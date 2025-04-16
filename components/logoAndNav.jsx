@@ -4,12 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from 'react';
 
-// import logo from '../assets/shared/desktop/logo.svg';
-// import openMenu from '../assets/shared/tablet/icon-hamburger.svg';
-// import closeMenu from '../assets/shared/mobile/icon-close.svg';
-
 export default function LogoAndNav (){
-  console.log('v 2')
+  console.log('v 3')
   const [isOpen, setIsOpen] = useState(false)
 
   function toggleMenu () {

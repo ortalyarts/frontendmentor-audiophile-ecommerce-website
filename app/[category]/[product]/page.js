@@ -8,6 +8,7 @@ import ThumbProductCategories from "@/components/thumbProductCategories.jsx";
 import GoBackButton from '@/components/goBackButton.jsx';
 import Article from '@/components/article.jsx';
 import QuantityAddToCart from '@/components/quantityAddToCart.jsx';
+import ImageProductDetails from '@/components/imageProductDetails';
 
 export default async function ProductDetails(props) {
     const params = await props.params;
@@ -22,19 +23,17 @@ export default async function ProductDetails(props) {
         getOthers(selectedProduct.id)
     ]);
 
-
-
     return (
         <div className="content-holder product-details-page">
             <GoBackButton />
             <Suspense fallback={<p>Loading products...</p>}>
             <article className='product-details-top'>
             <div className='image-holder rounded-corners'>
-                <picture>
-                    <source srcSet={selectedProduct.desktop.replace('./', '/')} media="(min-width: 768px)" width="540" height="560" />
-                    <source srcSet={selectedProduct.tablet.replace('./', '/')} media="(min-width: 560px)" width="281" height="480" />
-                    <img src={selectedProduct.mobile.replace('./', '/')} alt={selectedProduct.name} width="327" height="327" />
-                </picture>
+                <ImageProductDetails srcDesktop={selectedProduct.desktop} srcTablet={selectedProduct.tablet} srcMobile={selectedProduct.mobile} alt={selectedProduct.name}
+                    desktopWidth={540} desktopHeight={560}
+                    tabletWidth={281} tabletHeight={480}
+                    mobileWidth={327} mobileHeight={327}
+                />
             </div>
             <div className='short-summary'>
                 {selectedProduct.new === 1 && <p className='title-overline'>New product</p>}
@@ -63,22 +62,22 @@ export default async function ProductDetails(props) {
             </article>
             <div className='gallery'>
                 <div className='gallery-left'>
-                    <picture className='rounded-corners'>
-                        <source srcSet={productGallery[0].desktop.replace('./', '/')} media="(min-width: 768px)" width="445" height="280" />
-                        <source srcSet={productGallery[0].tablet.replace('./', '/')} media="(min-width: 560px)" width="277" height="174" />
-                        <img srcSet={productGallery[0].mobile.replace('./', '/')} alt={selectedProduct.name} width="327" height="327" />
-                    </picture>
-                    <picture className='rounded-corners'>
-                        <source srcSet={productGallery[1].desktop.replace('./', '/')} media="(min-width: 768px)" width="445" height="280" />
-                        <source srcSet={productGallery[1].tablet.replace('./', '/')} media="(min-width: 560px)"  width="277" height="174" />
-                        <img src={productGallery[1].mobile.replace('./', '/')} alt={selectedProduct.name} width="327" height="327" />
-                    </picture>
+                    <ImageProductDetails srcDesktop={productGallery[0].desktop} srcTablet={productGallery[0].tablet} srcMobile={productGallery[0].mobile} alt={selectedProduct.name}
+                        desktopWidth={445} desktopHeight={280}
+                        tabletWidth={277} tabletHeight={174}
+                        mobileWidth={327} mobileHeight={327}
+                    />
+                    <ImageProductDetails srcDesktop={productGallery[1].desktop} srcTablet={productGallery[1].tablet} srcMobile={productGallery[1].mobile} alt={selectedProduct.name}
+                        desktopWidth={445} desktopHeight={280}
+                        tabletWidth={277} tabletHeight={174}
+                        mobileWidth={327} mobileHeight={327}
+                    />
                 </div>
-                <picture className='rounded-corners'>
-                    <source srcSet={productGallery[2].desktop.replace('./', '/')} media="(min-width: 768px)" width="635" height="592" />
-                    <source srcSet={productGallery[2].tablet.replace('./', '/')} media="(min-width: 560px)" width="395" height="368" />
-                    <img src={productGallery[2].mobile.replace('./', '/')} alt={selectedProduct.name} width="327" height="327" />
-                </picture>
+                <ImageProductDetails srcDesktop={productGallery[2].desktop} srcTablet={productGallery[2].tablet} srcMobile={productGallery[2].mobile} alt={selectedProduct.name}
+                    desktopWidth={635} desktopHeight={592}
+                    tabletWidth={395} tabletHeight={368}
+                    mobileWidth={327} mobileHeight={327}
+                />
             </div>
             <div className='related-products'>
                 <h2 className='title-3'>You may also like</h2>
@@ -88,13 +87,11 @@ export default async function ProductDetails(props) {
                         const pathTablet = suggestion.mobile.replace('mobile', 'tablet');
 
                         return<li key={suggestion.slug}>
-
-                            <picture className='rounded-corners'>
-                                <source srcSet={pathDesktop.replace('./', '/')} media="(min-width: 768px)" width="350" height="318" />
-                                <source srcSet={pathTablet.replace('./', '/')} media="(min-width: 560px)" width="233" height="318" />
-                                <img src={suggestion.mobile.replace('./', '/')} alt={selectedProduct.name} width="327" height="120" />
-                            </picture>
-
+                            <ImageProductDetails srcDesktop={pathDesktop} srcTablet={pathTablet} srcMobile={suggestion.mobile} alt={suggestion.name}
+                                desktopWidth={350} desktopHeight={318}
+                                tabletWidth={233} tabletHeight={318}
+                                mobileWidth={327} mobileHeight={120}
+                            />
                             <h3 className='title-5'>{suggestion.name}</h3>
                             <Link href={`/products/${suggestion.slug}`} className="btn-main">See product</Link>
                             

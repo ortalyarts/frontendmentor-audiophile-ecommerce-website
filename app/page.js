@@ -4,11 +4,7 @@ import HeaderHome from "@/components/headerHome";
 import ThumbProductCategories from "@/components/thumbProductCategories";
 import Article from "@/components/article";
 import AnimatedDivExpandInView from "@/components/animatedDivExpandInView.jsx";
-
-// import imgEarphonesDesktop from '/assets/home/desktop/image-earphones-yx1.jpg';
-// import imgEarphonesTablet from '/assets/home/tablet/image-earphones-yx1.jpg';
-// import imgEarphonesMobile from '/assets/home/mobile/image-earphones-yx1.jpg';
-
+import ImageProductDetails from "@/components/imageProductDetails";
 
 export default function Home() {
   return (
@@ -39,12 +35,11 @@ export default function Home() {
         </AnimatedDivExpandInView>
 
         <AnimatedDivExpandInView className="featured-double">
-          <picture className="rounded-corners">
-              <source srcSet='/assets/home/desktop/image-earphones-yx1.jpg' media="(min-width: 768px)"idth="540" height="320" />
-              <source srcSet='/assets/home/tablet/image-earphones-yx1.jpg' media="(min-width: 560px)" width="339" height="320" />
-              <img className="rounded-corners" src='/assets/home/mobile/image-earphones-yx1.jpg' alt="black earphones" width="327" height="200" />
-          </picture>
-
+            <ImageProductDetails srcDesktop='./assets/home/desktop/image-earphones-yx1.jpg' srcTablet='./assets/home/tablet/image-earphones-yx1.jpg' srcMobile='./assets/home/mobile/image-earphones-yx1.jpg' alt="black earphones"
+                desktopWidth={540} desktopHeight={320}
+                tabletWidth={339} tabletHeight={320}
+                mobileWidth={327} mobileHeight={200}
+            />
 
           <div className="grey-holder rounded-corners">
             <div className="featured-text">
