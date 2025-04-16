@@ -79,7 +79,7 @@ export default async function ProductDetails(props) {
                     mobileWidth={327} mobileHeight={327}
                 />
             </div> */}
-            <div className='related-products'>
+            {/* <div className='related-products'>
                 <h2 className='title-3'>You may also like</h2>
                 <ul>
                     {otherProducts.map((suggestion) => {
@@ -98,7 +98,7 @@ export default async function ProductDetails(props) {
                         </li>
                     })}
                 </ul>
-            </div>
+            </div> */}
             </Suspense>
             <ThumbProductCategories />
             {/* <Article /> */}
