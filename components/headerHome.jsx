@@ -8,7 +8,7 @@ export default function HeaderHome(){
     <div className="content-holder">
       <LogoNavCart />
       <section className="new-product">
-        <div className="new-product-content  animmate-slide-right-fade-in">
+        <div className="new-product-content animmate-slide-right-fade-in">
           <h1 className="title-overline">New product</h1>
           <h2 className="title-1">XX99 Mark II
             Headphones</h2>

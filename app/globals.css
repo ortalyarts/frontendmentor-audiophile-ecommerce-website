@@ -309,6 +309,8 @@ nav.main-navigation{
   background-repeat:  no-repeat;
   background-position:  center top -5rem;
   background-size: 70%;
+  display:grid;
+  align-items: start;
 }
 .new-product .new-product-content {
   display: grid;
@@ -631,6 +633,10 @@ footer .nav-and-logo {
   display:grid;
   gap: 2rem;
   justify-items: center;
+}
+.related-products ul li img {
+  max-width:100%;
+  height:auto;
 }
 
 /* CART */

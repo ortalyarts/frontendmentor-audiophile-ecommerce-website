@@ -28,20 +28,20 @@ export default async function ProductDetails(props) {
             <GoBackButton />
             <Suspense fallback={<p>Loading products...</p>}>
             <article className='product-details-top'>
-            <div className='image-holder rounded-corners'>
-                <ImageProductDetails srcDesktop={selectedProduct.desktop} srcTablet={selectedProduct.tablet} srcMobile={selectedProduct.mobile} alt={selectedProduct.name}
-                    desktopWidth={540} desktopHeight={560}
-                    tabletWidth={281} tabletHeight={480}
-                    mobileWidth={327} mobileHeight={327}
-                />
-            </div>
-            <div className='short-summary'>
-                {selectedProduct.new === 1 && <p className='title-overline'>New product</p>}
-                <h1 className='title-2'>{selectedProduct.name}</h1>
-                <p>{selectedProduct.description}</p>
-                <p className='price title-6'>$ {selectedProduct.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</p>
-                <QuantityAddToCart slug={selectedProduct.slug} price={selectedProduct.price} name={selectedProduct.name}/>                
-            </div>
+                <div className='image-holder rounded-corners'>
+                    <ImageProductDetails srcDesktop={selectedProduct.desktop} srcTablet={selectedProduct.tablet} srcMobile={selectedProduct.mobile} alt={selectedProduct.name}
+                        desktopWidth={540} desktopHeight={560}
+                        tabletWidth={281} tabletHeight={480}
+                        mobileWidth={327} mobileHeight={327}
+                    />
+                </div>
+                <div className='short-summary'>
+                    {selectedProduct.new === 1 && <p className='title-overline'>New product</p>}
+                    <h1 className='title-2'>{selectedProduct.name}</h1>
+                    <p>{selectedProduct.description}</p>
+                    <p className='price title-6'>$ {selectedProduct.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</p>
+                    <QuantityAddToCart slug={selectedProduct.slug} price={selectedProduct.price} name={selectedProduct.name}/>                
+                </div>
             </article>
             <article className='features-and-contains'>
                 <div>
@@ -89,7 +89,7 @@ export default async function ProductDetails(props) {
                         return<li key={suggestion.slug}>
                             <ImageProductDetails srcDesktop={pathDesktop} srcTablet={pathTablet} srcMobile={suggestion.mobile} alt={suggestion.name}
                                 desktopWidth={350} desktopHeight={318}
-                                tabletWidth={233} tabletHeight={318}
+                                tabletWidth={223} tabletHeight={318}
                                 mobileWidth={327} mobileHeight={120}
                             />
                             <h3 className='title-5'>{suggestion.name}</h3>

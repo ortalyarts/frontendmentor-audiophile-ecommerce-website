@@ -1,18 +1,21 @@
-// import imgBestGear from '/assets/shared/desktop/image-best-gear.jpg';
-// import imgBestGearTablet from '@/assets/shared/tablet/image-best-gear.jpg';
-// import imgBestGearMobile from '@/assets/shared/mobile/image-best-gear.jpg';
 import AnimatedDivSlideInView from "@/components/AnimatedDivSlideInView.jsx";
+import ImageProductDetails from "./imageProductDetails.jsx";
 
 export default function Article(){
     return (
       <AnimatedDivSlideInView>
       <article className="featured-article">
 
-          <picture className="rounded-corners">
+            <ImageProductDetails srcDesktop='./assets/shared/desktop/image-best-gear.jpg' srcTablet='./assets/shared/tablet/image-best-gear.jpg' srcMobile='./assets/shared/mobile/image-best-gear.jpg' alt="young man wearing headphons"
+                desktopWidth={540} desktopHeight={588}
+                tabletWidth={689} tabletHeight={300}
+                mobileWidth={327} mobileHeight={300}
+            />
+          {/* <picture className="rounded-corners">
                 <source srcSet='/assets/shared/desktop/image-best-gear.jpg' media="(min-width: 768px)" width="540" height="588" />
                 <source srcSet='/assets/shared/tablet/image-best-gear.jpg' media="(min-width: 560px)" width="689" height="300" />
                 <img className="rounded-corners" src='/assets/shared/mobile/image-best-gear.jpg' alt="young man wearing headphons" width="540" height="588" />
-            </picture>
+            </picture> */}
             <div className="article-summary">
               <h2 className="title-2">Bringing you the <span>best</span> audio gear</h2>
               <p>

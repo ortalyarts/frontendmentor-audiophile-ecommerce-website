@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useState, useEffect } from 'react';
 
 export default function LogoAndNav (){
-  console.log('v 3')
+  console.log('v 4')
   const [isOpen, setIsOpen] = useState(false)
 
   function toggleMenu () {
