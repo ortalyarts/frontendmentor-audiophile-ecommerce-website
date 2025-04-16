@@ -11,6 +11,7 @@ import QuantityAddToCart from '@/components/quantityAddToCart.jsx';
 import ImageProductDetails from '@/components/imageProductDetails';
 
 export default async function ProductDetails(props) {
+    try {
     const params = await props.params;
     const selectedProduct = await getProduct(params.product);
     //for not existing pages, intead of throwing an error
@@ -25,8 +26,8 @@ export default async function ProductDetails(props) {
 
     return (
         <div className="content-holder product-details-page">
-            <GoBackButton />
-            <Suspense fallback={<p>Loading products...</p>}>
+            {/* <GoBackButton /> */}
+            {/* <Suspense fallback={<p>Loading products...</p>}> */}
             {/* <article className='product-details-top'>
                 <div className='image-holder rounded-corners'>
                     <ImageProductDetails srcDesktop={selectedProduct.desktop} srcTablet={selectedProduct.tablet} srcMobile={selectedProduct.mobile} alt={selectedProduct.name}
@@ -43,7 +44,7 @@ export default async function ProductDetails(props) {
                     <QuantityAddToCart slug={selectedProduct.slug} price={selectedProduct.price} name={selectedProduct.name}/>                
                 </div>
             </article> */}
-            <article className='features-and-contains'>
+            {/* <article className='features-and-contains'>
                 <div>
                     <h3 className='title-3'>Features</h3>
                     <p>{selectedProduct.features}</p>
@@ -59,7 +60,7 @@ export default async function ProductDetails(props) {
                         )}
                     </ul>
                 </div>
-            </article>
+            </article> */}
             {/* <div className='gallery'>
                 <div className='gallery-left'>
                     <ImageProductDetails srcDesktop={productGallery[0].desktop} srcTablet={productGallery[0].tablet} srcMobile={productGallery[0].mobile} alt={selectedProduct.name}
@@ -99,9 +100,13 @@ export default async function ProductDetails(props) {
                     })}
                 </ul>
             </div> */}
-            </Suspense>
+            {/* </Suspense> */}
             {/* <ThumbProductCategories /> */}
             {/* <Article /> */}
         </div>
     );
+    } catch (error) {
+    console.error('Error rendering product details page:', error);
+    return <p>Something went wrong. Please try again later.</p>;
+    }
 }
