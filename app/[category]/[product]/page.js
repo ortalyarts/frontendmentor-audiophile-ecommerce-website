@@ -30,23 +30,23 @@ export async function generateStaticParams() {
 
 export default async function ProductDetails(props) {
 
-    (async () => {
-        generateStaticParams()
-      })();
+    // (async () => {
+    //     generateStaticParams()
+    //   })();
 
 
-    try {
-    const params = await props.params;
-    const selectedProduct = await getProduct(params.product);
-    //for not existing pages, intead of throwing an error
-    if (!selectedProduct) {
-        notFound();
-        }
-    const [productIncludes, productGallery, otherProducts] = await Promise.all([
-        getIncludes(selectedProduct.id),
-        getGallery(selectedProduct.id),
-        getOthers(selectedProduct.id)
-    ]);
+    // try {
+    // const params = await props.params;
+    // const selectedProduct = await getProduct(params.product);
+    // //for not existing pages, intead of throwing an error
+    // if (!selectedProduct) {
+    //     notFound();
+    //     }
+    // const [productIncludes, productGallery, otherProducts] = await Promise.all([
+    //     getIncludes(selectedProduct.id),
+    //     getGallery(selectedProduct.id),
+    //     getOthers(selectedProduct.id)
+    // ]);
 
     return (
         <div className="content-holder product-details-page">
@@ -129,8 +129,8 @@ export default async function ProductDetails(props) {
             {/* <Article /> */}
         </div>
     );
-    } catch (error) {
-    console.error('Error rendering product details page:', error);
-    return <p>Something went wrong. Please try again later.</p>;
-    }
+    // } catch (error) {
+    // console.error('Error rendering product details page:', error);
+    // return <p>Something went wrong. Please try again later.</p>;
+    // }
 }
