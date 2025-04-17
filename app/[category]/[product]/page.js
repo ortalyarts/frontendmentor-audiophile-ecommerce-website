@@ -10,8 +10,10 @@ import Article from '@/components/article.jsx';
 import QuantityAddToCart from '@/components/quantityAddToCart.jsx';
 import ImageProductDetails from '@/components/imageProductDetails';
 
+export const dynamicParams = true; // Enable dynamic fallback for routes not pre-rendered
+
 export async function generateStaticParams() {
-    const categoriesWithProducts = getCategoriesWithProducts();
+    const categoriesWithProducts = await getCategoriesWithProducts();
   
     const params = [];
     categoriesWithProducts.forEach(({ category, products }) => {
@@ -22,17 +24,15 @@ export async function generateStaticParams() {
         });
       });
     });
-  
+    console.log('Generated static params:', params); // Debugging output
     return params;
   }
 
 export default async function ProductDetails(props) {
-    //   Test function
-    // (async () => {
-    //     const categoriesWithProducts = await getCategoriesWithProducts();
-    //     console.log(categoriesWithProducts);
-    //   })();
-// End test
+
+    (async () => {
+        generateStaticParams()
+      })();
 
 
     try {
