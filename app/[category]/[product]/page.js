@@ -2,7 +2,7 @@ import { Suspense } from 'react';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
-import { getProduct, getIncludes, getGallery, getOthers } from '@/lib/util.js';
+import { getProduct, getIncludes, getGallery, getOthers, getCategoriesWithProducts } from '@/lib/util.js';
 
 import ThumbProductCategories from "@/components/thumbProductCategories.jsx";
 import GoBackButton from '@/components/goBackButton.jsx';
@@ -10,7 +10,31 @@ import Article from '@/components/article.jsx';
 import QuantityAddToCart from '@/components/quantityAddToCart.jsx';
 import ImageProductDetails from '@/components/imageProductDetails';
 
+export async function generateStaticParams() {
+    const categoriesWithProducts = getCategoriesWithProducts();
+  
+    const params = [];
+    categoriesWithProducts.forEach(({ category, products }) => {
+      products.forEach(product => {
+        params.push({
+          category,
+          product: product.slug,
+        });
+      });
+    });
+  
+    return params;
+  }
+
 export default async function ProductDetails(props) {
+    //   Test function
+    // (async () => {
+    //     const categoriesWithProducts = await getCategoriesWithProducts();
+    //     console.log(categoriesWithProducts);
+    //   })();
+// End test
+
+
     try {
     const params = await props.params;
     const selectedProduct = await getProduct(params.product);
