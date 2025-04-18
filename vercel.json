@@ -1,6 +1,6 @@
 {
   "functions": {
-    "api/[category]/[product]/page.js": {
+    "app/[category]/[product]/page.js": {
       "includeFiles": "products.db"
     }
   }
