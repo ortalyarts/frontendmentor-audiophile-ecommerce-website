@@ -4,15 +4,13 @@ import { getCategoriesWithProducts } from '@/lib/util.js';
 export async function generateStaticParams() {
     const categoriesWithProducts = await getCategoriesWithProducts();
   
-    const params = [];
-    categoriesWithProducts.forEach(({ category, products }) => {
-      products.forEach(product => {
-        params.push({
-          category,
-          product: product.slug,
-        });
-      });
-    });
+    // Flatten the structure into an array of { category, product } objects
+    const params = categoriesWithProducts.flatMap(({ category, products }) =>
+        products.map(product => ({
+            category,
+            product: product.slug,
+        }))
+    );
     console.log('Generated static params:', params); // Debugging output
     return params;
   }

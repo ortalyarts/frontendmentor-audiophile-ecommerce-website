@@ -21,7 +21,7 @@ export default function LogoAndNav (){
   function handleCloseNav(){
       setIsOpen(false)
   }
-console.log('V 17')
+console.log('V 18')
     return (
     <div className="nav-and-logo">
         <Link className="logo" onClick={toggleMenu} href="/"><Image src='/assets/shared/desktop/logo.svg' priority alt="Audiophile logo" width="143" height="25"/></Link>
