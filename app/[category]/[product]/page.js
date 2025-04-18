@@ -3,16 +3,16 @@ import { notFound } from 'next/navigation';
 
 import { getProducts } from '@/lib/util.js';
 
-// export async function generateStaticParams() {
-//     return [
-//         { category: 'earphones', product: 'yx1-earphones' },
-//         { category: 'headphones', product: 'xx59-headphones' },
-//         { category: 'headphones', product: 'xx99-mark-one-headphones' },
-//         { category: 'headphones', product: 'xx99-mark-two-headphones' },
-//         { category: 'speakers', product: 'zx7-speaker' },
-//         { category: 'speakers', product: 'zx9-speaker' },
-//     ];
-// }
+export async function generateStaticParams() {
+    return [
+        { category: 'earphones', product: 'yx1-earphones' },
+        { category: 'headphones', product: 'xx59-headphones' },
+        { category: 'headphones', product: 'xx99-mark-one-headphones' },
+        { category: 'headphones', product: 'xx99-mark-two-headphones' },
+        { category: 'speakers', product: 'zx7-speaker' },
+        { category: 'speakers', product: 'zx9-speaker' },
+    ];
+}
 
 export default async function ProductDetails(props) {
  
