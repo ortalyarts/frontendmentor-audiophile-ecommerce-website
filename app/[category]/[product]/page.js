@@ -10,17 +10,6 @@ import Article from '@/components/article.jsx';
 import QuantityAddToCart from '@/components/quantityAddToCart.jsx';
 import ImageProductDetails from '@/components/imageProductDetails';
 
-export async function generateStaticParams() {
-    return [
-        { category: 'earphones', product: 'yx1-earphones' },
-        { category: 'headphones', product: 'xx59-headphones' },
-        { category: 'headphones', product: 'xx99-mark-one-headphones' },
-        { category: 'headphones', product: 'xx99-mark-two-headphones' },
-        { category: 'speakers', product: 'zx7-speaker' },
-        { category: 'speakers', product: 'zx9-speaker' },
-    ];
-}
-
 export default async function ProductDetails(props) {
     const params = await props.params;
     const selectedProduct = await getProduct(params.product);
@@ -33,7 +22,6 @@ export default async function ProductDetails(props) {
         getGallery(selectedProduct.id),
         getOthers(selectedProduct.id)
     ]);
-
 
     return (
         <div className="content-holder product-details-page">
