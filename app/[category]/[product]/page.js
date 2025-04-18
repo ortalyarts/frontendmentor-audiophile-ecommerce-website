@@ -1,9 +1,9 @@
-import { Suspense } from 'react';
-import { notFound } from 'next/navigation';
-
 import { getProducts } from '@/lib/util.js';
 
 export async function generateStaticParams() {
+    const products = getProducts(); // Fetch all products
+    console.log("products");
+    console.log(products);
     return [
         { category: 'earphones', product: 'yx1-earphones' },
         { category: 'headphones', product: 'xx59-headphones' },
