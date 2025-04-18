@@ -1,0 +1,7 @@
+{
+    "functions": {
+      "lib/util.js": {
+        "includeFiles": "products.db"
+      }
+    }
+  }
