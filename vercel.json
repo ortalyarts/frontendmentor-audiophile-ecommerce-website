@@ -1,7 +1,7 @@
 {
-    "functions": {
-      "app/**/*": {
-        "includeFiles": ["products.db"]
-      }
+  "functions": {
+    "api/[category]/[product]/page.js": {
+      "includeFiles": "products.db"
     }
+  }
 }
