@@ -1,5 +1,5 @@
 
-import { getCategoriesWithProducts } from '@/lib/util.js';
+// import { getCategoriesWithProducts } from '@/lib/util.js';
 
 // export async function generateStaticParams() {
 //     const categoriesWithProducts = await getCategoriesWithProducts();
