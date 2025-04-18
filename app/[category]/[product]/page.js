@@ -15,9 +15,6 @@ export async function generateStaticParams() {
     return params;
   }
 export default async function ProductDetails(props) {
-    (async () => {
-        generateStaticParams()
-      })();
  
     return (
     <h1>Test page</h1>
