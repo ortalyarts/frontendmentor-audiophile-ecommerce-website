@@ -1,3 +1,7 @@
 {
-    "includeFiles": ["products.db"]
-  }
+    "functions": {
+      "**/**/*": {
+        "includeFiles": ["products.db"]
+      }
+    }
+}
