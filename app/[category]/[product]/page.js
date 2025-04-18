@@ -14,6 +14,7 @@
 //     console.log('Generated static params:', params); // Debugging output
 //     return params;
 //   }
+import { getProducts } from '@/lib/util.js';
 
 export async function generateStaticParams() {
     return [
