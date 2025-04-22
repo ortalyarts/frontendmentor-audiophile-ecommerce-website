@@ -38,8 +38,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [GitHub - Code Souce](https://github.com/ortalyarts/frontendmentor-galleria-slideshow)
-- Live Site URL: [Preview Site](https://frontendmentor-galleria-slideshow.vercel.app/)
+- Solution URL: [GitHub - Code Souce](https://github.com/ortalyarts/frontendmentor-audiophile-ecommerce-website)
+- Live Site URL: [Preview Site](https://frontendmentor-audiophile-ecommerce-website-six.vercel.app/)
 
 ### Built with
 
